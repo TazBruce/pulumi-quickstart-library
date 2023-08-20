@@ -1,0 +1,29 @@
+{
+  "name": "@tazbruce/pulumi-quickstart-library",
+  "version": "1.0.0",
+  "description": "Pulumi infra library for building and deploying an API",
+  "author": "Taz Bruce <tasmanbrucework@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "LICENSE", "README.md", "package.json"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tazbruce/pulumi-quickstart-library.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "build": "tsc",
+    "deploy": "npm build && npm publish"
+  },
+  "devDependencies": {
+    "@types/node": "^16"
+  },
+  "dependencies": {
+    "@pulumi/aws": "^5.42.0",
+    "@pulumi/docker": "^4.2.3",
+    "@pulumi/gcp": "^6.0.0",
+    "@pulumi/pulumi": "^3.0.0",
+    "typescript": "^5.1.6"
+  }
+}
