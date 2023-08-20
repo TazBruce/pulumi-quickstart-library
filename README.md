@@ -22,6 +22,11 @@ npm install @tazbruce/infra-api-library
 
 ## Usage
 ### Container Component
+#### Pulumi Config Requirements
+* `gcp:project` - Google Cloud Project ID
+* `gcp:region` - Google Cloud Region
+* `gcp:credentials` - Google Cloud Service Account Credentials
+
 ```typescript
 import { ContainerComponent } from '@tazbruce/infra-api-library';
 
@@ -37,6 +42,10 @@ const container = new ContainerComponent("container", {
 ```
 
 ### Api Component
+#### Pulumi Config Requirements
+* `aws:region` - AWS Region
+* `aws:accessKey` - AWS Access Key
+* `aws:secretKey` - AWS Secret Key
 
 ```typescript
 import { ApiComponent } from '@tazbruce/infra-api-library';
