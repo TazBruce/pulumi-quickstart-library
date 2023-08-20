@@ -17,13 +17,29 @@ and then expose it to the internet via AWS Api Gateway.
 
 ## Installation
 ```bash
-npm install @partplanner/infra-api-library
+npm install @tazbruce/infra-api-library
 ```
 
 ## Usage
-### Api Component
+### Container Component
 ```typescript
-import { ApiComponent } from '@partplanner/infra-api-library';
+import { ContainerComponent } from '@tazbruce/infra-api-library';
+
+const container = new ContainerComponent("container", {
+    environment: environment, // dev, staging, prod
+    imageName: imageName, // name of the image to use
+    appPath: appPath, // path of the app
+    memory: memory, // memory to allocate
+    cpu: cpu, // cpu to allocate
+    containerPort: containerPort, // port to expose
+    concurrency: concurrency, // max concurrent requests
+});
+```
+
+### Api Component
+
+```typescript
+import { ApiComponent } from '@tazbruce/infra-api-library';
 
 const api = new ApiComponent("api", {
     environment: environment, // dev, staging, prod
@@ -31,24 +47,6 @@ const api = new ApiComponent("api", {
     containerUrl: containerComponent.serviceUrl, // url of the container
     appDomain: appUrl, // domain of the app
     apiDomain: apiDomain, // domain of the api
-});
-```
-
-### Container Component
-```typescript
-import { ContainerComponent } from '@partplanner/infra-api-library';
-
-const container = new ContainerComponent("container", {
-    environment: environment, // dev, staging, prod
-    imageName: imageName, // name of the image to use
-    appPath: appPath, // path of the app
-    location: location, // gcp location
-    project: project,  // gcp project
-    keyFile: keyFile, // gcp key file contents
-    memory: memory, // memory to allocate
-    cpu: cpu, // cpu to allocate
-    containerPort: containerPort, // port to expose
-    concurrency: concurrency, // max concurrent requests
 });
 ```
 
