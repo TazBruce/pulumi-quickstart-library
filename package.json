@@ -1,6 +1,6 @@
 {
   "name": "@tazbruce/pulumi-quickstart-library",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Pulumi infra library for building and deploying an API",
   "author": "Taz Bruce <tasmanbrucework@gmail.com>",
   "license": "MIT",

@@ -35,7 +35,7 @@ export class ContainerComponent extends pulumi.ComponentResource {
                     id: "all_artifacts",
                     action: "DELETE",
                     condition: {
-                        olderThan: "1d"
+                        olderThan: "43200s"
                     }
                 }
             ]
