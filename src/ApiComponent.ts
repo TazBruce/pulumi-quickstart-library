@@ -39,7 +39,7 @@ export class ApiComponent extends pulumi.ComponentResource {
             corsConfiguration: {
                 allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
                 allowHeaders: ["*"],
-                allowOrigins: [args.appDomain],
+                allowOrigins: [args.appDomain, args.localAppDomain],
                 allowCredentials: true,
                 exposeHeaders: ["*"],
             },
@@ -91,5 +91,6 @@ export interface ApiComponentArgs {
     imageName: pulumi.Input<string>
     containerUrl: pulumi.Input<string>
     appDomain: pulumi.Input<string>
+    localAppDomain: pulumi.Input<string>
     apiDomain: pulumi.Input<string>
 }
