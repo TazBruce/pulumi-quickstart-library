@@ -23,6 +23,22 @@ export class ContainerComponent extends pulumi.ComponentResource {
             format: "DOCKER",
             location: gcpRegion,
             repositoryId: args.imageName + "-" + args.environment,
+            cleanupPolicies: [
+                {
+                    id: "max_images",
+                    action: "KEEP",
+                    mostRecentVersions: {
+                        keepCount: args.maxImages,
+                    }
+                },
+                {
+                    id: "all_artifacts",
+                    action: "DELETE",
+                    condition: {
+                        olderThan: "1d"
+                    }
+                }
+            ]
         }, {
             parent: this,
         });
@@ -109,6 +125,7 @@ export class ContainerComponent extends pulumi.ComponentResource {
 export interface ContainerComponentArgs {
     environment: pulumi.Input<string>;
     imageName: pulumi.Input<string>;
+    maxImages: pulumi.Input<number>;
     appPath: pulumi.Input<string>;
     memory: pulumi.Input<string>;
     cpu: pulumi.Input<string>;

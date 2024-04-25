@@ -1,6 +1,6 @@
 {
   "name": "@tazbruce/pulumi-quickstart-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pulumi infra library for building and deploying an API",
   "author": "Taz Bruce <tasmanbrucework@gmail.com>",
   "license": "MIT",
@@ -22,7 +22,7 @@
   "dependencies": {
     "@pulumi/aws": "^5.42.0",
     "@pulumi/docker": "^4.2.3",
-    "@pulumi/gcp": "^6.0.0",
+    "@pulumi/gcp": "^7.20.0",
     "@pulumi/pulumi": "^3.0.0",
     "typescript": "^5.1.6"
   }
